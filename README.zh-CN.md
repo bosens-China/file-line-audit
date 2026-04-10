@@ -1,5 +1,7 @@
 # File Line Audit Skill
 
+[English](./README.md)
+
 `file-line-audit` 是一个用于审查项目文件长度分布的 Agent Skill。  
 在 Git 仓库中，它会按 Git 的 tracked/untracked 文件集合并结合 `.gitignore` 规则（含子目录规则）取文件，跳过二进制文件，按文本文件中的 `\n` 个数计数，并仅输出“超出阈值文件列表”。
 
