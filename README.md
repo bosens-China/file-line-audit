@@ -5,12 +5,10 @@
 `file-line-audit` audits file line counts in a project.  
 In a Git repository it follows Git's tracked and untracked file set with `.gitignore` rules applied, including nested `.gitignore` files. It skips binary files, counts `\n` characters in each text file, and prints only files that exceed the configured threshold.
 
-## Install via npx skills
-
-Install this skill from the local path:
+## Installation
 
 ```bash
-npx skills add . --skill file-line-audit
+npx skills add bosens-China/file-line-audit
 ```
 
 ## Configuration
