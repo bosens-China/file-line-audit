@@ -1,0 +1,12 @@
+{
+  "name": "file-line-audit",
+  "version": "0.1.0",
+  "private": true,
+  "author": "yliu",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node --test .agents/skills/file-line-audit/tests/line-audit.test.mjs",
+    "line:audit": "node .agents/skills/file-line-audit/scripts/line-audit.mjs"
+  }
+}
