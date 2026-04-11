@@ -19,7 +19,7 @@ npx skills add bosens-China/file-line-audit
 如果需要自定义阈值或扫描模式，请参考示例配置：
 
 ```bash
-cp .agents/skills/file-line-audit/.line-audit.example.json .line-audit.json
+cp .agents/skills/file-line-audit/assets/line-audit.example.json .line-audit.json
 ```
 
 ## 开源协议

@@ -41,7 +41,7 @@ Choose the packaged executable under `scripts/`:
 1. Confirm you are in the repository root.
 2. Check for local configuration:
    - If the repository has `.line-audit.json`, use it.
-   - If not, use the built-in example: `.agents/skills/file-line-audit/.line-audit.example.json`.
+   - If not, use the built-in example: `.agents/skills/file-line-audit/assets/line-audit.example.json`.
 3. Select the correct binary from `scripts/` for the current platform.
 4. On Linux/macOS, ensure the binary is executable: `chmod +x <binary_path>`.
 5. Run the binary with `--config` pointing to the selected configuration.
@@ -54,18 +54,18 @@ Choose the packaged executable under `scripts/`:
 On Unix-like systems:
 ```bash
 chmod +x .agents/skills/file-line-audit/scripts/line-audit-<target>
-.agents/skills/file-line-audit/scripts/line-audit-<target> --config .agents/skills/file-line-audit/.line-audit.example.json
+.agents/skills/file-line-audit/scripts/line-audit-<target> --config .agents/skills/file-line-audit/assets/line-audit.example.json
 ```
 
 On Windows:
 ```powershell
-& .\.agents\skills\file-line-audit\scripts\line-audit-windows-amd64.exe --config .agents/skills/file-line-audit/.line-audit.example.json
+& .\.agents\skills\file-line-audit\scripts\line-audit-windows-amd64.exe --config .agents/skills/file-line-audit/assets/line-audit.example.json
 ```
 
 ### Create a local config (Optional)
 Only do this if the user specifically requests a persistent local configuration.
 ```bash
-cp .agents/skills/file-line-audit/.line-audit.example.json .line-audit.json
+cp .agents/skills/file-line-audit/assets/line-audit.example.json .line-audit.json
 ```
 
 ## Config Rules

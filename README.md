@@ -19,7 +19,7 @@ Run the pre-packaged binary for your platform:
 To use a custom threshold or patterns, copy the example config:
 
 ```bash
-cp .agents/skills/file-line-audit/.line-audit.example.json .line-audit.json
+cp .agents/skills/file-line-audit/assets/line-audit.example.json .line-audit.json
 ```
 
 ## License
