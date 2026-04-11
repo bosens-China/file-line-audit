@@ -1,3 +1,38 @@
 {
-  "threshold": 400
+  "threshold": 400,
+  "include": [
+    "src/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "app/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "apps/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "pkg/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "packages/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "lib/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "libs/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "cmd/**/*.{go,rs,py,js,ts}",
+    "internal/**/*.{go,rs,py,js,ts}",
+    "backend/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "frontend/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "client/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "server/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "service/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "services/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "api/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}",
+    "web/**/*.{js,ts,vue,jsx,tsx,mjs,cjs,cts,mts,py,go,rs,java,kt,kts,scala,rb,php,cs,swift,dart}"
+  ],
+  "exclude": [
+    "node_modules/",
+    "dist/",
+    "build/",
+    "coverage/",
+    ".next/",
+    ".nuxt/",
+    ".output/",
+    ".svelte-kit/",
+    "storybook-static/",
+    "target/",
+    "out/",
+    "vendor/",
+    "tmp/",
+    "temp/"
+  ]
 }

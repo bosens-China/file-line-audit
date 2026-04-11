@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+# 并发控制：如果同一分支有新的任务启动，则取消正在运行的旧任务
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true # 开启 Go 依赖缓存
+
+      - name: Run tests
+        run: go test -v ./...
+
+  refresh-skill-binaries:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # 获取完整历史以支持推送
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Rebuild packaged binaries
+        run: |
+          chmod +x ./scripts/build-skill.sh
+          ./scripts/build-skill.sh
+
+      - name: Commit and Push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .agents/skills/file-line-audit/scripts
+          
+          # 检查是否有文件变更
+          if git diff --cached --quiet; then
+            echo "No changes in packaged binaries. Skipping commit."
+            exit 0
+          fi
+          
+          git commit -m "chore(ci): refresh packaged skill binaries [skip ci]"
+          
+          # 推送前先 rebase 远程变更，防止 push 冲突
+          git pull --rebase origin main
+          git push origin main

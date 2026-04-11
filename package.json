@@ -1,12 +1,12 @@
 {
   "name": "file-line-audit",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "private": true,
   "author": "yliu",
   "license": "MIT",
-  "type": "module",
   "scripts": {
-    "test": "node --test .agents/skills/file-line-audit/tests/line-audit.test.mjs",
-    "line:audit": "node .agents/skills/file-line-audit/scripts/line-audit.mjs"
+    "test": "go test ./...",
+    "line:audit": "go run ./cmd/line-audit",
+    "build:skill": "powershell -ExecutionPolicy Bypass -File ./scripts/build-skill.ps1"
   }
 }

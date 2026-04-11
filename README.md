@@ -1,9 +1,6 @@
-# File Line Audit Skill
+# File Line Audit
 
-[中文说明](./README.zh-CN.md)
-
-`file-line-audit` audits file line counts in a project.  
-In a Git repository it follows Git's tracked and untracked file set with `.gitignore` rules applied, including nested `.gitignore` files. It skips binary files, counts `\n` characters in each text file, and prints only files that exceed the configured threshold.
+An Agent Skill and Go-powered CLI to quickly identify oversized source files in any repository.
 
 ## Installation
 
@@ -11,12 +8,19 @@ In a Git repository it follows Git's tracked and untracked file set with `.gitig
 npx skills add bosens-China/file-line-audit
 ```
 
-## Configuration
+## Usage
 
-`.agents/skills/file-line-audit/.line-audit.example.json` is the template config file.  
-Copy it to `.line-audit.json` in your project root and adjust as needed:
+Run the pre-packaged binary for your platform:
 
-- `threshold`: line-count threshold for reporting (default `400`)
+```bash
+./.agents/skills/file-line-audit/scripts/line-audit-<target>
+```
+
+To use a custom threshold or patterns, copy the example config:
+
+```bash
+cp .agents/skills/file-line-audit/.line-audit.example.json .line-audit.json
+```
 
 ## License
 
